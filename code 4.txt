@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int m = 10;
+    int n, c;
+
+    printf("Binomial Coefficients Table for m = 10:\n");
+
+    n = 0;
+    do {
+        c = factorial(m) / (factorial(n) * factorial(m - n));
+        printf("C(%d, %d) = %d\n", m, n, c);
+        n++;
+    } while (n <= m);
+
+    n = 0;
+    while (n <= m) {
+        c = factorial(m) / (factorial(n) * factorial(m - n));
+        printf("C(%d, %d) = %d\n", m, n, c);
+        n++;
+    }
+
+    return 0;
+}
